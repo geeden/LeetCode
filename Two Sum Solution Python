@@ -1,0 +1,21 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+
+        dict = {}  #dictionary of values
+        for i, value in enumerate(nums):
+            if (target - value) in dict: #target - value = other value
+                return [dict[target - value], i]
+            else:
+                dict[value] = i #adds to the dictionary
+
+
+        #below is brute method, gets a time limit error when submitted
+        '''
+        list = []
+        count = 0
+        for i in range(len(nums)):
+            for j in range(len(nums)):
+                if i == j: continue
+                elif nums[i] + nums[j] == target and count < 2:
+                    count += 2
+                    return [i,j]'''
