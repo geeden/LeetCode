@@ -1,0 +1,13 @@
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        if len(strs) == 1:
+            return strs[0]
+
+        shortest = min(strs)
+        count = 0
+        while count < len(shortest):
+            for each in strs:
+                if each[count] != shortest[count]:
+                    return shortest[:count]
+            count += 1
+        return strs[0][:len(shortest)]
