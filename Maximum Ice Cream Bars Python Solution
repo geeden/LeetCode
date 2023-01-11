@@ -1,0 +1,10 @@
+class Solution(object):
+    def maxIceCream(self, costs, coins):
+        costs.sort()
+        currency = 0
+        count = 0
+        for i in costs:
+            if (i + currency) <= coins:
+                currency += i
+                count += 1
+        return count
